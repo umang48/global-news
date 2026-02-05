@@ -41,9 +41,14 @@ VITE_NEWS_API_KEY=your_actual_api_key_here
 ```
 
 **Get Your API Key:**
-- Visit [NewsAPI.org](https://newsapi.org/register)
-- Create a free account
+- Visit [GNews.io](https://gnews.io/)
+- Click "Get API Key" and create a free account
 - Copy your API key and paste it in the `.env` file
+
+**Why GNews instead of NewsAPI?**
+- GNews free tier works on live/production sites
+- NewsAPI free tier only works on localhost
+- GNews provides 100 requests per day for free
 
 ### 4. Run the Development Server
 
@@ -65,7 +70,7 @@ The app will open at `http://localhost:5173`
 - **React** - UI framework
 - **Vite** - Build tool
 - **Tailwind CSS** - Styling
-- **NewsAPI** - News data source
+- **GNews API** - News data source (works on production sites)
 - **localStorage** - Bookmark persistence
 
 ## Project Structure
@@ -83,17 +88,14 @@ src/
 └── index.css                # Tailwind imports
 ```
 
-## API Limitations
+## API Information
 
-The free NewsAPI plan has some limitations:
-- 100 requests per day
-- Only works on localhost in development
-- For production, consider upgrading or using GNews API as an alternative
+This app uses **GNews API** which provides:
+- ✅ Works on production/live sites (not just localhost)
+- ✅ 100 free requests per day
+- ✅ Real-time news from 60,000+ sources
+- ✅ Multiple languages and countries
 
-## Alternative: GNews API
-
-To use GNews API instead:
-1. Get an API key from [gnews.io](https://gnews.io/)
-2. Update the API endpoints in `App.jsx`
+Get your free API key at [gnews.io](https://gnews.io/)
 
 Enjoy your news aggregator!

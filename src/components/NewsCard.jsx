@@ -1,5 +1,5 @@
 const NewsCard = ({ article, onBookmark, isBookmarked }) => {
-  const { title, description, urlToImage, url, source, publishedAt } = article;
+  const { title, description, image, url, source, publishedAt } = article;
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -14,7 +14,7 @@ const NewsCard = ({ article, onBookmark, isBookmarked }) => {
     <article className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
       <div className="relative overflow-hidden">
         <img
-          src={urlToImage || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop'}
+          src={image || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop'}
           alt={title}
           className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
           onError={(e) => {

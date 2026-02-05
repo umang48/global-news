@@ -6,7 +6,7 @@ import NewsGrid from './components/NewsGrid';
 import BookmarkedNews from './components/BookmarkedNews';
 
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-const BASE_URL = 'https://newsapi.org/v2';
+const BASE_URL = 'https://gnews.io/api/v4';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -32,17 +32,26 @@ function App() {
     const currentPage = reset ? 1 : page;
     
     try {
-      const endpoint = searchQuery 
-        ? `${BASE_URL}/everything?q=${searchQuery}&page=${currentPage}&pageSize=12`
-        : `${BASE_URL}/top-headlines?category=${category}&country=us&page=${currentPage}&pageSize=12`;
+      let endpoint;
       
-      const response = await fetch(`${endpoint}&apiKey=${API_KEY}`);
+      if (searchQuery) {
+        // GNews search endpoint
+        endpoint = `${BASE_URL}/search?q=${encodeURIComponent(searchQuery)}&lang=en&max=10&page=${currentPage}&apikey=${API_KEY}`;
+      } else {
+        // GNews top headlines by category
+        const gnewsCategory = category === 'general' ? 'general' : category;
+        endpoint = `${BASE_URL}/top-headlines?category=${gnewsCategory}&lang=en&max=10&page=${currentPage}&apikey=${API_KEY}`;
+      }
+      
+      const response = await fetch(endpoint);
       const data = await response.json();
       
-      if (data.status === 'ok') {
+      if (data.articles) {
         setArticles(reset ? data.articles : [...articles, ...data.articles]);
-        setHasMore(data.articles.length === 12);
+        setHasMore(data.articles.length === 10);
         setPage(reset ? 2 : page + 1);
+      } else if (data.errors) {
+        console.error('API Error:', data.errors);
       }
     } catch (error) {
       console.error('Error fetching news:', error);

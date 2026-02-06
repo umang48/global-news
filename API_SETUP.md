@@ -1,23 +1,24 @@
-# GNews API Setup Guide
+# CurrentsAPI Setup Guide
 
-## Why GNews API?
+## Why CurrentsAPI?
 
-We switched from NewsAPI to GNews because:
-- ✅ **Works on live sites** - NewsAPI free tier only works on localhost
-- ✅ **100 requests/day** - Sufficient for personal projects
+We use CurrentsAPI because:
+- ✅ **No CORS issues** - Works perfectly on live sites
+- ✅ **600 requests/day** - More generous than most free tiers
 - ✅ **No credit card required** - Completely free tier
 - ✅ **Production ready** - Deploy anywhere without issues
+- ✅ **Worldwide sources** - News from multiple countries and languages
 
 ## Getting Your API Key
 
 ### Step 1: Sign Up
-1. Go to [https://gnews.io/](https://gnews.io/)
-2. Click "Get API Key" button
+1. Go to [https://currentsapi.services/en](https://currentsapi.services/en)
+2. Click "Get Your Free API Key" button
 3. Fill in your details (name, email, password)
 4. Verify your email address
 
 ### Step 2: Get Your Key
-1. Log in to your GNews dashboard
+1. Log in to your CurrentsAPI dashboard
 2. Your API key will be displayed on the dashboard
 3. Copy the API key
 
@@ -25,17 +26,18 @@ We switched from NewsAPI to GNews because:
 1. Open the `.env` file in your project root
 2. Replace the placeholder with your actual key:
    ```
-   VITE_NEWS_API_KEY=your_actual_gnews_api_key_here
+   VITE_NEWS_API_KEY=your_actual_currentsapi_key_here
    ```
 3. Save the file
 4. Restart your dev server: `npm run dev`
 
 ## API Limits (Free Tier)
 
-- **100 requests per day**
-- **10 articles per request**
-- **60,000+ news sources**
+- **600 requests per day** (much better than competitors!)
+- **Unlimited articles per request**
+- **Worldwide news sources**
 - **Multiple languages supported**
+- **Multiple categories**
 
 ## Testing Your Setup
 
@@ -60,10 +62,15 @@ After adding your API key:
 - Restart the dev server after changing `.env`
 - Check browser console for error messages
 
-### 403 Error?
+### 401 Unauthorized Error?
 - Your API key might be invalid
-- Check if you've exceeded the daily limit (100 requests)
+- Make sure you copied the entire key
+- Check if there are extra spaces in the `.env` file
+
+### 429 Too Many Requests?
+- You've exceeded the daily limit (600 requests)
 - Wait 24 hours for the limit to reset
+- Consider caching results to reduce API calls
 
 ### Still not working?
 - Verify the `.env` file format (no quotes around the key)
@@ -75,7 +82,7 @@ After adding your API key:
 When deploying to Vercel/Netlify:
 1. Add environment variable in hosting dashboard
 2. Variable name: `VITE_NEWS_API_KEY`
-3. Variable value: Your GNews API key
+3. Variable value: Your CurrentsAPI key
 4. Redeploy your app
 
-Your app will now work perfectly on live sites! 🎉
+**No proxy needed!** CurrentsAPI works directly from the browser without CORS issues! 🎉

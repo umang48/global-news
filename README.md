@@ -4,12 +4,13 @@ A modern, responsive news dashboard built with React and Tailwind CSS. Browse he
 
 ## Features
 
-- **Category Tabs**: Browse news by General, Tech, Sports, Business, and Health
+- **Category Tabs**: Browse news by General, Tech, Sports, Business, Health, Entertainment, and Science
 - **Search Functionality**: Filter articles by keyword
 - **Pagination**: Load more articles with a single click
 - **Bookmarks**: Save articles to read later (stored in localStorage)
 - **Responsive Design**: Beautiful UI that works on all devices
 - **Modern UI**: Built with Tailwind CSS for a clean, professional look
+- **No CORS Issues**: CurrentsAPI works directly from the browser
 
 ## Setup Instructions
 
@@ -41,14 +42,15 @@ VITE_NEWS_API_KEY=your_actual_api_key_here
 ```
 
 **Get Your API Key:**
-- Visit [GNews.io](https://gnews.io/)
-- Click "Get API Key" and create a free account
+- Visit [CurrentsAPI.services](https://currentsapi.services/en)
+- Click "Get Your Free API Key" and sign up
 - Copy your API key and paste it in the `.env` file
 
-**Why GNews instead of NewsAPI?**
-- GNews free tier works on live/production sites
-- NewsAPI free tier only works on localhost
-- GNews provides 100 requests per day for free
+**Why CurrentsAPI?**
+- ✅ Works on live/production sites (no CORS issues)
+- ✅ Free tier: 600 requests per day
+- ✅ No credit card required
+- ✅ Real-time news from worldwide sources
 
 ### 4. Run the Development Server
 
@@ -70,7 +72,7 @@ The app will open at `http://localhost:5173`
 - **React** - UI framework
 - **Vite** - Build tool
 - **Tailwind CSS** - Styling
-- **GNews API** - News data source (works on production sites)
+- **CurrentsAPI** - News data source (works on production sites, no CORS issues)
 - **localStorage** - Bookmark persistence
 
 ## Project Structure
@@ -90,12 +92,13 @@ src/
 
 ## API Information
 
-This app uses **GNews API** which provides:
-- ✅ Works on production/live sites (not just localhost)
-- ✅ 100 free requests per day
-- ✅ Real-time news from 60,000+ sources
-- ✅ Multiple languages and countries
+This app uses **CurrentsAPI** which provides:
+- ✅ Works on production/live sites (no CORS issues!)
+- ✅ 600 free requests per day
+- ✅ Real-time news from worldwide sources
+- ✅ Multiple languages and categories
+- ✅ No credit card required
 
-Get your free API key at [gnews.io](https://gnews.io/)
+Get your free API key at [currentsapi.services](https://currentsapi.services/en)
 
 Enjoy your news aggregator!

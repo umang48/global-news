@@ -1,5 +1,5 @@
 const NewsCard = ({ article, onBookmark, isBookmarked }) => {
-  const { title, description, image, url, source, publishedAt } = article;
+  const { title, description, image, url, author, published } = article;
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -41,9 +41,9 @@ const NewsCard = ({ article, onBookmark, isBookmarked }) => {
       <div className="p-6">
         <div className="flex items-center justify-between mb-3">
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-            {source.name}
+            {author || 'Unknown Source'}
           </span>
-          <span className="text-xs text-gray-500 font-medium">{formatDate(publishedAt)}</span>
+          <span className="text-xs text-gray-500 font-medium">{formatDate(published)}</span>
         </div>
         
         <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">

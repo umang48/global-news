@@ -101,4 +101,12 @@ This app uses **CurrentsAPI** which provides:
 
 Get your free API key at [currentsapi.services](https://currentsapi.services/en)
 
+## Developer
+
+This project is developed by **Umang Prajapati**.
+
+- **Website**: [phptutorialpoints.in](https://phptutorialpoints.in/)
+- **GitHub Repository**: [github.com/umang48/global-news](https://github.com/umang48/global-news)
+- **Live Demo**: [global-news.phptutorialpoints.in](https://global-news.phptutorialpoints.in/)
+
 Enjoy your news aggregator!
